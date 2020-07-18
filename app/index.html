@@ -12,9 +12,13 @@
     <form action="">
         <input type="text" id="item">
         <input type="number" id="quantity">
-        <div class="custom-control custom-switch" style="display: inline">
-            <input type="checkbox" class="custom-control-input" id="customSwitch1">
-            <label class="custom-control-label" for="customSwitch1">kg</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+            <label class="form-check-label" for="inlineRadio1">szt.</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">kg</label>
         </div>
         <label for="categories">Kategorie</label>
         <select name="categories" id="categories">
@@ -24,19 +28,25 @@
             <option value="bread">Pieczywo</option>
             <option value="meat">Mięso</option>
         </select>
-        <button type="button" id="add">Dodaj</button>
+        <button type="button" class="btn btn-success" id="add">Dodaj</button>
     </form>
     <table class="table" id="orders">
         <thead>
         <tr>
             <th>
-                Przedmiot
+                Produkt
             </th>
             <th>
                 Ilość
             </th>
             <th>
+                Jednostka
+            </th>
+            <th>
                 Kategoria
+            </th>
+            <th>
+
             </th>
         </tr>
         </thead>
