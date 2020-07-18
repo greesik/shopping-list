@@ -9,51 +9,54 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
-    <form action="">
-        <input type="text" id="item">
-        <input type="number" id="quantity">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pieces" value="option1" checked>
-            <label class="form-check-label" for="pieces">szt.</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="kilograms" value="option2">
-            <label class="form-check-label" for="kilograms">kg</label>
-        </div>
-        <label for="categories">Kategorie</label>
-        <select name="categories" id="categories">
-            <option value="dairy">Nabiał</option>
-            <option value="fruits">Owoce</option>
-            <option value="vegetables">Warzywa</option>
-            <option value="bread">Pieczywo</option>
-            <option value="meat">Mięso</option>
-        </select>
-        <button type="button" class="btn btn-success" id="add">Dodaj</button>
-    </form>
-    <table class="table" id="orders">
-        <thead>
-        <tr>
-            <th>
-                Produkt
-            </th>
-            <th>
-                Ilość
-            </th>
-            <th>
-                Jednostka
-            </th>
-            <th>
-                Kategoria
-            </th>
-            <th>
+    <div class="list">
+        <form action="" class="form">
+            <input type="text" id="item" placeholder="Nazwa produktu">
+            <input type="number" id="quantity" placeholder="Ilość">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pieces" value="option1" checked>
+                <label class="form-check-label" for="pieces">szt.</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight" value="option2">
+                <label class="form-check-label" for="weight">kg</label>
+            </div>
+            <label for="categories">Kategorie</label>
+            <select name="categories" id="categories">
+                <option value="dairy">Nabiał</option>
+                <option value="fruits">Owoce</option>
+                <option value="vegetables">Warzywa</option>
+                <option value="bread">Pieczywo</option>
+                <option value="meat">Mięso</option>
+            </select>
+            <button type="button" class="btn btn-success" id="add">Dodaj</button>
+        </form>
+        <table class="table" id="orders">
+            <thead>
+            <tr>
+                <th>
+                    Produkt
+                </th>
+                <th>
+                    Ilość
+                </th>
+                <th>
+                    Jednostka
+                </th>
+                <th>
+                    Kategoria
+                </th>
+                <th>
 
-            </th>
-        </tr>
-        </thead>
-        <tbody>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+    <p class="overall"></p>
 </body>
 <script src="build/out.js"></script>
 </html>

@@ -6,9 +6,13 @@ let categoryInput = document.querySelector("#categories");
 let itemInput = document.querySelector("#item");
 let quantityInput = document.querySelector("#quantity");
 let unitInput = document.querySelector("#pieces");
-
+let pieceCounter = 0;
+let weightCounter = 0;
+let rows = document.querySelectorAll("tr");
+let overall = document.querySelector(".overall");
 
 addButton.addEventListener("click", function(){
+
     let tableRow = document.createElement("tr");
     let item = document.createElement("td");
     tableRow.appendChild(item);
@@ -36,7 +40,16 @@ addButton.addEventListener("click", function(){
         deleteRow[i].addEventListener("click", function(){
             deleteRow[i].parentElement.parentElement.remove();
         });
-    };
+    }
 
+    rows.forEach(function(elem, i) {
+        if (unit.innerText === "szt.") {
+            pieceCounter = pieceCounter + parseInt(quantity.innerText);
+        } else if (unit.innerText === "kg") {
+            weightCounter = weightCounter + parseInt(quantity.innerText);
+        }
+    });
+
+    overall.innerText = `W sumie planujemy zakupić ${pieceCounter} sztuk i ${weightCounter} kilogramów towaru.`;
 });
 
