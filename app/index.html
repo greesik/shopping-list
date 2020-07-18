@@ -6,8 +6,44 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping List - Grzegorz Sikora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
+    <form action="">
+        <input type="text" id="item">
+        <input type="number" id="quantity">
+        <div class="custom-control custom-switch" style="display: inline">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">kg</label>
+        </div>
+        <label for="categories">Kategorie</label>
+        <select name="categories" id="categories">
+            <option value="dairy">Nabiał</option>
+            <option value="fruits">Owoce</option>
+            <option value="vegetables">Warzywa</option>
+            <option value="bread">Pieczywo</option>
+            <option value="meat">Mięso</option>
+        </select>
+        <button type="button" id="add">Dodaj</button>
+    </form>
+    <table class="table" id="orders">
+        <thead>
+        <tr>
+            <th>
+                Przedmiot
+            </th>
+            <th>
+                Ilość
+            </th>
+            <th>
+                Kategoria
+            </th>
+        </tr>
+        </thead>
+        <tbody>
 
+        </tbody>
+    </table>
 </body>
+<script src="build/out.js"></script>
 </html>
