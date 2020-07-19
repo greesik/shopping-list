@@ -29,15 +29,17 @@ function validateForm(){
     }
 }
 
-
 addButton.addEventListener("click", function(){
     let tableRow = document.createElement("tr");
+
     let item = document.createElement("td");
     tableRow.appendChild(item);
     item.innerText = itemInput.value;
+
     let quantity = document.createElement("td");
     tableRow.appendChild(quantity);
     quantity.innerText = quantityInput.value;
+
     let unit = document.createElement("td");
     tableRow.appendChild(unit);
     if (unitInput.checked) {
@@ -79,6 +81,15 @@ addButton.addEventListener("click", function(){
             let option = document.createElement("option");
             option.innerHTML = arrCategories[arrCategories.length - 1];
             showCategories.appendChild(option);
+        }
+    });
+
+    // click item to mark it as checked
+    tableRow.addEventListener("click", function(){
+        if (tableRow.style.textDecoration === "none"){
+            tableRow.style.setProperty("text-decoration", "line-through");
+        } else {
+            tableRow.style.setProperty("text-decoration", "none");
         }
     });
 
