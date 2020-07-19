@@ -7,60 +7,75 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping List - Grzegorz Sikora</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/main.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
-    <label for="show-categories">Pokaż kategorie:</label>
-    <select name="show-categories" id="show-categories">
-        <option value="all">Wszystkie</option>
-    </select>
-    <div class="list">
-        <form action="" class="form">
-            <input type="text" id="item" placeholder="Nazwa produktu">
-            <input type="number" id="quantity" placeholder="Ilość">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pieces" value="option1" checked>
-                <label class="form-check-label" for="pieces">szt.</label>
+    <div class="container">
+        <div class="title">
+            <h1>Shopping List</h1>
+            <div class="show-categories-container">
+                <label class="show-categories-label "for="show-categories">Pokaż kategorie:</label>
+                <select name="show-categories" id="show-categories">
+                    <option value="all">Wszystkie</option>
+                </select>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight" value="option2">
-                <label class="form-check-label" for="weight">kg</label>
-            </div>
-            <label for="categories">Kategorie</label>
-            <select name="categories" id="categories">
-                <option value="dairy">Nabiał</option>
-                <option value="fruits">Owoce</option>
-                <option value="vegetables">Warzywa</option>
-                <option value="bread">Pieczywo</option>
-                <option value="meat">Mięso</option>
-            </select>
-            <button type="button" class="btn btn-success" id="add">Dodaj</button>
-        </form>
-        <table class="table" id="orders">
-            <thead>
-            <tr>
-                <th>
-                    Produkt
-                </th>
-                <th>
-                    Ilość
-                </th>
-                <th>
-                    Jednostka
-                </th>
-                <th>
-                    Kategoria
-                </th>
-                <th>
+        </div>
 
-                </th>
-            </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
+        <div class="list">
+            <form action="" class="form">
+                <input type="text" id="item" placeholder="Nazwa produktu">
+                <input type="number" id="quantity" placeholder="Ilość">
+                <div class="radio-container">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pieces" value="option1" checked>
+                        <label class="form-check-label" for="pieces">szt.</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight" value="option2">
+                        <label class="form-check-label" for="weight">kg</label>
+                    </div>
+                </div>
+                <select name="categories" id="categories">
+                    <option value="dairy">Nabiał</option>
+                    <option value="fruits">Owoce</option>
+                    <option value="vegetables">Warzywa</option>
+                    <option value="bread">Pieczywo</option>
+                    <option value="meat">Mięso</option>
+                </select>
+                <button type="button" class="btn btn-success" id="add">Dodaj</button>
+            </form>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table table-hover table-fixed" id="orders">
+                <thead>
+                <tr>
+                    <th>
+                        Produkt
+                    </th>
+                    <th>
+                        Ilość
+                    </th>
+                    <th>
+                        Jednostka
+                    </th>
+                    <th>
+                        Kategoria
+                    </th>
+                    <th>
+                        Opcje
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+<!--        <p class="overall"></p>-->
+        <button class="btn btn-danger" id="pdf">Download PDF</button>
     </div>
-    <p class="overall"></p>
 </body>
 <script src="build/out.js"></script>
 </html>

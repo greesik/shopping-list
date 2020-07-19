@@ -34,6 +34,8 @@
   },
   "dependencies": {
     "autoprefixer": "^9.8.5",
-    "compression-webpack-plugin": "^4.0.0"
+    "compression-webpack-plugin": "^4.0.0",
+    "jspdf": "^1.5.3",
+    "jspdf-autotable": "^3.5.6"
   }
 }
