@@ -10,6 +10,8 @@ let pieceCounter = 0;
 let weightCounter = 0;
 let rows = document.querySelectorAll("tr");
 let overall = document.querySelector(".overall");
+let showCategories = document.querySelector("#show-categories");
+let arrCategories = [];
 
 addButton.addEventListener("click", function(){
 
@@ -42,13 +44,43 @@ addButton.addEventListener("click", function(){
         });
     }
 
-    rows.forEach(function(elem, i) {
+    rows.forEach(function() {
         if (unit.innerText === "szt.") {
             pieceCounter = pieceCounter + parseInt(quantity.innerText);
         } else if (unit.innerText === "kg") {
             weightCounter = weightCounter + parseInt(quantity.innerText);
         }
     });
+
+    rows.forEach(function(){
+        if (!arrCategories.includes(category.innerText)){
+            arrCategories.push(category.innerText);
+            let option = document.createElement("option");
+            option.innerHTML = arrCategories[arrCategories.length - 1];
+            showCategories.appendChild(option);
+        }
+    });
+
+    showCategories.addEventListener("change", function(event){
+        // noinspection JSUnresolvedVariable
+        console.log(event.target.value);
+        category.parentElement.style.display = "none";
+        if (category.innerText === event.target.value) {
+            rows.forEach(function(elem, i){
+                // noinspection JSUnresolvedVariable
+                category.parentElement.style.display = "table-row";
+            })
+            } else { // noinspection JSUnresolvedVariable
+            if (event.target.value === "all") {
+                rows.forEach(function(elem, i){
+                    // noinspection JSUnresolvedVariable
+                    category.parentElement.style.display = "table-row";
+                })
+            }
+        }
+    });
+
+
 
     overall.innerText = `W sumie planujemy zakupić ${pieceCounter} sztuk i ${weightCounter} kilogramów towaru.`;
 });
